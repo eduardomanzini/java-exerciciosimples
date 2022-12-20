@@ -1,0 +1,37 @@
+
+package application;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+
+import db.DB;
+
+public class Program {
+
+	public static void main(String[] args) {
+		
+		//INSERIR DADOS
+		
+		Connection conn = null;
+		PreparedStatement st = null;
+		
+		try {
+			conn = DB.getConnection();
+			
+			st = conn.prepareStatement(
+					"INSERT INTO seller "
+					+ "(Name, Email, BirthDate, BaseSalary, DepartmentID ) "
+					+ "VALUES "
+					+"(?, ?, ?, ?, ?)");	
+			
+			st.setString(1, "Carl Purple");
+			st.setString(2, "Carl@gmail.com");
+			
+			
+			
+			
+		}
+		
+		
+
+}

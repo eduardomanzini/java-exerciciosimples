@@ -1,0 +1,14 @@
+package entities;
+
+public class PessoaJuridica extends Empregado {
+
+	public PessoaJuridica(String name, String email, Double salario) {
+		super(name, email, salario);
+	}
+
+	public double SalarioJuridica(double horas) {
+		return horas * 15.00;
+	}
+
+	
+}

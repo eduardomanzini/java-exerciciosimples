@@ -1,0 +1,49 @@
+package application;
+
+import java.util.Locale;
+import java.util.Scanner;
+import java.util.Set;
+import java.util.TreeSet;
+
+import entities.Empregado;
+import entities.PessoaJuridica;
+
+public class Teste {
+
+	public static void main(String[] args) {
+		
+		
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+		
+		Set<Empregado> set = new TreeSet<>();
+		
+		System.out.println("Quantos funcionarios ira adicionar");
+		int quant = sc.nextInt();
+		
+		for (int i = 1; i <= quant; i++) {
+			System.out.println("Digite o nome: ");
+			String nome = sc.nextLine();
+			System.out.println("Digite o e-mail: ");
+			String email = sc.nextLine();
+			System.out.println("Digite o salario: ");
+			double salario = sc.nextDouble();
+			sc.nextLine();
+			System.out.println("Digite cnpj ou cpf");
+			String dado = sc.nextLine();
+			
+			set.add(new PessoaJuridica(nome, email, salario, dado));
+			
+		}
+		
+		
+		
+		
+		
+		
+		sc.close();
+	}
+	
+	
+
+}

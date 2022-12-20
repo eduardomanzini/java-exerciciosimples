@@ -1,0 +1,57 @@
+package entities;
+
+public abstract class Empregado {
+
+	private String name;
+	private String email;
+	private Double salario;
+	
+	
+	public Empregado(String name, String email, Double salario) {
+		this.name = name;
+		this.email = email;
+		this.salario = salario;
+	}
+
+
+
+	public Empregado(String name2, String email2, Double salario2) {
+		// TODO Auto-generated constructor stub
+	}
+
+
+
+	public String getName() {
+		return name;
+	}
+
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+
+	public String getEmail() {
+		return email;
+	}
+
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+
+	public Double getSalario() {
+		return salario;
+	}
+
+
+	public void setSalario(Double salario) {
+		this.salario = salario;
+	}
+	
+	
+	
+	
+	
+}

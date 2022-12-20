@@ -1,0 +1,45 @@
+
+package application;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.text.SimpleDateFormat;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeFormatterBuilder;
+
+import javax.swing.text.DateFormatter;
+
+import db.DB;
+
+public class Program {
+
+	public static void main(String[] args) {
+		
+		//INSERIR DADOS
+		
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+		
+		
+		Connection conn = null;
+		PreparedStatement st = null;
+		
+		try {
+			conn = DB.getConnection();
+			
+			st = conn.prepareStatement(
+					"INSERT INTO seller "
+					+ "(Name, Email, BirthDate, BaseSalary, DepartmentID ) "
+					+ "VALUES "
+					+"(?, ?, ?, ?, ?)");	
+			
+			st.setString(1, "Carl Purple");
+			st.setString(2, "Carl@gmail.com");
+			
+			
+			
+			
+		}
+		
+		
+
+}

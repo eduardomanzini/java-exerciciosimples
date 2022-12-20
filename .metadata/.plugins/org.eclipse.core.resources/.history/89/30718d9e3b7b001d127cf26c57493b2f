@@ -1,0 +1,23 @@
+package entities;
+
+public class PessoaFisica extends Empregado{
+
+	private String CPF;
+
+	public PessoaFisica(String name, String email, Double salario, String cPF) {
+		super(name, email, salario);
+		this.CPF = cPF;
+	}
+
+	public String getCPF() {
+		return CPF;
+	}
+
+	public void setCPF(String cPF) {
+		this.CPF = cPF;
+	}
+	
+	
+	
+	
+}

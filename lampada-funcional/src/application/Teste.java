@@ -1,0 +1,58 @@
+package application;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Locale;
+import java.util.Scanner;
+import java.util.stream.Collectors;
+
+import entities.Empregado;
+import entities.PessoaJuridica;
+
+public class Teste {
+
+	public static void main(String[] args) {
+		
+		
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+		
+		List<Empregado> list = new ArrayList<>();
+		
+		System.out.print("Quantos funcionarios ira adicionar:");
+		int quant = sc.nextInt();
+		sc.nextLine();
+		
+		for (int i = 1; i <= quant; i++) {
+			System.out.print("Digite o nome: ");
+			String nome = sc.nextLine();
+			System.out.print("Digite o e-mail: ");
+			String email = sc.nextLine();
+			System.out.print("Digite o salario: ");
+			double salario = sc.nextDouble();
+			sc.nextLine();
+			System.out.print("Digite cnpj ou cpf");
+			String dado = sc.nextLine();
+			
+			PessoaJuridica pf = new PessoaJuridica(nome, email, salario, dado);
+			
+			list.add(pf);
+			
+		}
+		
+		List<String> nome = list.stream()
+				.filter(x -> x.getSalario() > 2000)
+				.map(x -> x.getName())
+				.sorted()
+				.collect(Collectors.toList());
+				
+		nome.forEach(System.out::println);
+		
+		
+		
+		sc.close();
+	}
+	
+	
+
+}

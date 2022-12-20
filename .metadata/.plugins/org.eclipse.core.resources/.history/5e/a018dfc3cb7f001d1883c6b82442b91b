@@ -1,0 +1,35 @@
+package application;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import db.DB;
+import db.DbIntegrityException;
+
+public class Program {
+
+	public static void main(String[] args) {
+		
+		
+		//deletar dados
+		
+		Connection conn = null;
+		PreparedStatement st = null;	
+		try {
+			conn = DB.getConnection();
+			
+			
+					
+		System.out.println("Done! Rows affected: " + rowsAffected);					
+		}
+		catch (SQLException e) {
+			e.printStackTrace();
+			
+		}
+		finally {
+			DB.closeStatement(st);
+			DB.closeConnection();
+		}
+	}	
+}
